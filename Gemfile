@@ -16,7 +16,11 @@ gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
 
 gem 'unicorn' # Use Unicorn as the app server
 
-gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'omniauth-facebook'#, '1.4.0'
+gem "omniauth-google-oauth2" #, "~> 0.2.1"
+gem "omniauth-google" #, "~> 0.2.1"
+
 gem 'devise'
 
 

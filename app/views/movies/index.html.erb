@@ -1,4 +1,9 @@
 <p id="notice"><%=  notice  %></p>
+  
+
+<!-- app/views/pages/home.html.erb -->
+
+
 
 <h1>Listing Movies</h1>
 
@@ -31,3 +36,20 @@
 <br>
 
 <%= link_to 'New Movie', new_movie_path %>
+
+
+<% if  1>3 %>
+ <%= link_to "Logout",  logout_path, :method => :post %>
+<% else %> 
+<%= link_to "Log in with Google", "/auth/google", id: "sign_in", class: "uk-button uk-button-primary" %>
+  <%= link_to "Sign in with Facebook", '/auth/facebook' %>
+<% end %>
+ 
+
+<% if session[:logged_in] %>
+  Logged in as: <%= session[:renter_name] %>!
+  <%= link_to "Log out", signout_path, id: "sign_out" %>
+<% else %>
+  <!-- %= link_to "Sign in with Facebook", sessions_create_path %> -->
+  <%= link_to "Log in with Google", "/auth/google", id: "sign_in", class: "uk-button uk-button-primary" %>
+<% end %>

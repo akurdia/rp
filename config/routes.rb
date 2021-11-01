@@ -59,11 +59,29 @@ Rails.application.routes.draw do
   resources :movies
   root :to => redirect('/movies')
     
-  get  'auth/:provider/callback' => 'sessions#create'
-  get  'auth/failure' => 'sessions#failure'
-  get  'auth/facebook', :as => 'login'
-  post 'logout' => 'sessions#destroy'
+  #get  'auth/:provider/callback' => 'sessions#create'
+ # get  'auth/failure' => 'sessions#failure'
+ # get  'auth/google', :as => 'login'
+  #post 'logout' => 'sessions#destroy'
+ 
+  
+    get 'auth/:provider/callback', to: 'sessions#create'
+    get 'auth/failure', to: redirect('/')
+    get 'signout', to: 'sessions#destroy', as: 'signout'
+    get 'login', to: 'sessions#new', as: 'login'
+    
+    # Added these for cucumber testing
+    # sessions#create_guest makes a fake user for Cucumber testing with hard coded data 
+    # so that session[:logged_in] is true
+ #   get 'auth/guest', to: 'sessions#create_guest'
+    # sessions#loggedin checks that the user is logged in and outputs session[:logged_in] to log folder
+    # Since it is used by Cucumber, the output is put into the bottom of log/test.log
+ #   get 'auth/loggedin', to: 'sessions#loggedin'
 
+    resources :sessions, only: [:new, :create, :destroy]
+    get '/login', to: 'sessions#login'  
     
-    
+ 
+  resource :home, only: [:index]
+ 
 end
