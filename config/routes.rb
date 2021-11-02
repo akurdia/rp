@@ -78,8 +78,8 @@ Rails.application.routes.draw do
     # Since it is used by Cucumber, the output is put into the bottom of log/test.log
  #   get 'auth/loggedin', to: 'sessions#loggedin'
 
-    resources :sessions, only: [:new, :create, :destroy]
-    get '/login', to: 'sessions#login'  
+  #  resources :sessions, only: [:new, :create, :destroy]
+   # get '/login', to: 'sessions#login'  
     
  
   resource :home, only: [:index]
