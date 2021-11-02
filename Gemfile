@@ -21,6 +21,7 @@ gem 'devise'
 gem 'omniauth' 
 gem "omniauth-google-oauth2" #, "~> 0.2.1"
 gem "omniauth-google" #, "~> 0.2.1"
+gem "omniauth-facebook" #, "~> 0.2.1"
 
 
 
