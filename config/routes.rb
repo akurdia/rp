@@ -59,16 +59,19 @@ Rails.application.routes.draw do
   resources :movies
   root :to => redirect('/movies')
     
+    get 'auth/:provider/callback' , to: 'sessions#googleAuth'
+   get 'auth/failure', to: redirect('/')
+    
   #get  'auth/:provider/callback' => 'sessions#create'
  # get  'auth/failure' => 'sessions#failure'
  # get  'auth/google', :as => 'login'
   #post 'logout' => 'sessions#destroy'
  
   
-    get 'auth/:provider/callback', to: 'sessions#create'
-    get 'auth/failure', to: redirect('/')
-    get 'signout', to: 'sessions#destroy', as: 'signout'
-    get 'login', to: 'sessions#new', as: 'login'
+    #get 'auth/:provider/callback', to: 'sessions#create'
+   # get 'auth/failure', to: redirect('/')
+   # get 'signout', to: 'sessions#destroy', as: 'signout'
+   # get 'login', to: 'sessions#new', as: 'login'
     
     # Added these for cucumber testing
     # sessions#create_guest makes a fake user for Cucumber testing with hard coded data 
