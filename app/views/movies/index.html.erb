@@ -50,5 +50,5 @@
   Logged in as: <%= session[:renter_name] %>!
   <%= link_to "Log out", signout_path, id: "sign_out" %>
 <% else %> 
-  <%= link_to "Log in with Google", "/auth/google", id: "sign_in", class: "uk-button uk-button-primary", method: :get %>
+  <%= link_to "Log in with Google", "/auth/google/callback", id: "sign_in", class: "uk-button uk-button-primary", method: :get %>
 <% end %>
