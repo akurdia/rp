@@ -43,7 +43,7 @@
  <%= link_to "Logout",  logout_path, :method => :post %>
 <% else %> 
 <%= link_to "Log in with Google", "/auth/google_oauth2", id: "sign_in", class: "uk-button uk-button-primary", method: :get%>
-  
+ <%= link_to "Log in with Google callback", "/auth/google_oauth2/callback", id: "sign_in", class: "uk-button uk-button-primary", method: :get%> 
 <% end %>
  
 
