@@ -42,7 +42,7 @@
 <% if  1>3 %>
  <%= link_to "Logout",  logout_path, :method => :post %>
 <% else %> 
-<%= link_to "Log in with Google", "/auth/google_oauth2", id: "sign_in", class: "uk-button uk-button-primary", method: :get%> 
+<%= link_to "Log in", "/auth/google_oauth2", id: "sign_in", class: "uk-button uk-button-primary", method: :get%> 
 <% end %>
  
 
@@ -50,15 +50,16 @@
   Logged in as: <%= session[:renter_name] %>!
   <%= link_to "Log out", signout_path, id: "sign_out" %>
 <% else %> 
-  <%= link_to "Log in with Google", "/auth/google", id: "sign_in", class: "uk-button uk-button-primary", method: :get %>
+  <%= link_to "Log in", "/auth/google", id: "sign_in", class: "uk-button uk-button-primary", method: :get %>
 <% end %>
+<br>
+ 
+ 
 
+<img class="img-responsive" src="images/GoodShrekImage.png" alt="ShrekGoodImage" height = "500">
 
+<img class="img-responsive" src="BadShrekImage.png" alt="BadShrekImage" height = "400">
 
-
-<img class="img-responsive" src="GoodShrekImage.jpg" alt="ShrekGoodImage">
-
-
-
+<%= image_tag "GoodShrekImage.png", height: 300, alt:"ShrekGoodImage" %>
 
 
