@@ -59,10 +59,9 @@ Rails.application.routes.draw do
   resources :movies
   root :to => redirect('/movies')
     
-  get  'auth/:provider/callback' => 'sessions#create'
-  get  'auth/failure' => 'sessions#failure'
-  get  'auth/facebook', :as => 'login'
-  post 'logout' => 'sessions#destroy'
+# Routes for Google authentication
+    get 'auth/:provider/callback', to: 'sessions#googleAuth'
+    get 'auth/failure', to: redirect('/')
 
     
     
